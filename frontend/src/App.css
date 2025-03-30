@@ -1,1 +1,153 @@
 @import 'tailwindcss';
+
+/* .light{
+    background-color: rgb(213, 213, 213);
+    color: #111;
+}
+.dark{
+    background-color: #111;
+    color: rgba(0,255,0,0.9);
+}
+.light button{
+    background-color: dodgerblue;
+    color: #fff;
+}
+.dark button{
+    background-color: rgba(0,255,0);
+    color: #fff;
+} */
+
+/* Smooth transitions for dark/light mode */
+@import 'tailwindcss';
+
+/* Smooth transitions for dark/light mode */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light Mode */
+.light {
+  --bg-primary: #f5f5f4;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #1c1917;
+  --text-secondary: #3b82f6;
+  --text-accent: #3b82f6;
+  --btn-primary: #3b82f6;
+  --btn-primary-hover: #2563eb;
+  --btn-secondary: #e5e7eb;
+  --border-primary: #d6d3d1;
+  --input-border: #d6d3d1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-card: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #00ff00;
+  --text-accent: #00ff00;
+  --btn-primary: #00ff00;
+  --btn-primary-hover: rgba(0, 255, 0, 0.8);
+  --btn-secondary: #374151;
+  --border-primary: #4b5563;
+  --input-border: #4b5563;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Navbar specific styles */
+header {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Input styles */
+.input-field {
+  background-color: var(--bg-card);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--text-accent);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--btn-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+/* Link styles */
+.link-accent {
+  color: var(--text-accent);
+}
+
+.link-accent:hover {
+  text-decoration: underline;
+}
+
+/* Icon animations */
+.mode-toggle-icon {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mode-toggle-icon.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Form animations */
+.form-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.form-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px var(--shadow-color);
+}

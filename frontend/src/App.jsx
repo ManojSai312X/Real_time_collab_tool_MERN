@@ -7,6 +7,7 @@ import NOpage from './Pages/Nopage.jsx'
 import Login from './Pages/Login.jsx'
 import Signup from './Pages/Signup.jsx'
 import Dashboard from './Pages/Dashboard.jsx'
+import TeamEditorPage from './Pages/Teameditor.jsx';
 // import MainApp from './App.jsx'; // Renamed the imported App component
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path:'/dashboard',
     element:<Dashboard/>
+  },
+  {
+    path:'/team',
+    element:<TeamEditorPage/>
   }
 ]);
 

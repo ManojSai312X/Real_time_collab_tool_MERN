@@ -1,0 +1,4 @@
+.env
+node_modules
+hi.txt
+server1.js
