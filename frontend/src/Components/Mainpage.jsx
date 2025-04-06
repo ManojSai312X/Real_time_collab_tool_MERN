@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../App.css';
 const Mainpage = () => {
   const nav = useNavigate();
-
+  const [dart,setDart] = useState(true)
   function toLogin(e) {
     e.preventDefault();
     nav('/login');
@@ -14,12 +14,16 @@ const Mainpage = () => {
     nav('/signup');
   }
 
+  const changeColor = () =>{
+    setDart(!dart)
+  }
+
   return (
     <div className="text-center p-8">
       {/* Welcome Heading */}
       <h1 className="text-5xl font-bold mb-6 animate-fade-in">
-        Welcome to <span className="logo-text animate-fade-in duration-500">TeamSync</span>
-      </h1>
+  Welcome to <span onClick={changeColor} className={ dart?"text-[rgba(0,255,0,0.8)]":"text-blue-600"}>TeamSync</span>
+</h1>
 
       {/* Subheading */}
       <div className="text-current">
